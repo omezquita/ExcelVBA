@@ -1,4 +1,7 @@
-Function TrimAndJoin(ByRef Arr() As String) As String
+Function TrimAndJoin(ByVal Sep As String, _
+                     ByRef Arr() As String, _
+                     Optional ByVal prefix As String = "", _
+                     Optional ByVal suffix As String = "") As String
 
 Dim c As Integer
 Dim S As String
@@ -7,7 +10,7 @@ Dim S As String
     S = ""
    Do While Arr(c) <> ""
         With Application.WorksheetFunction
-            S = S & .Trim(.Clean(Arr(c))) & ", "
+            S = S & prefix & .Trim(.Clean(Arr(c))) & suffix & Sep
             c = c + 1
         End With
     Loop
