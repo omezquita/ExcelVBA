@@ -1,4 +1,7 @@
-Function TrimCleanJoinRange(ByVal Sep As String, ByVal Rng As Range) As String
+Function TrimCleanJoinRange(ByVal Sep As String, _
+                            ByVal Rng As Range, _
+                            Optional ByVal prefix As String = "", _
+                            Optional ByVal suffix As String = "") As String
 
 Dim cl As Range
 Dim S As String
@@ -6,7 +9,7 @@ Dim S As String
 S = ""
 For Each cl In Rng.Cells
         With Application.WorksheetFunction
-            S = S & .Trim(.Clean(cl.Value)) & Sep
+            S = S & prefix & .Trim(.Clean(cl.Value)) & suffix & Sep
         End With
 Next cl
 
