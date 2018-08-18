@@ -3,7 +3,7 @@ Function CountVisibleSheets()
     Dim i As Long
     
     i = 0
-    For Each xSht In ActiveWorkbook.Sheets
+    For Each Wks In ActiveWorkbook.Sheets
         If Wks.Visible Then i = i + 1
     Next
     
