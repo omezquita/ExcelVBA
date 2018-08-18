@@ -9,6 +9,7 @@ Dim S As String
     c = LBound(Arr)
     S = ""
    Do While Arr(c) <> ""
+    ' To use the VBA version of Trim remove the period in front of .Trim.
         With Application.WorksheetFunction
             S = S & prefix & .Trim(.Clean(Arr(c))) & suffix & Sep
             c = c + 1
